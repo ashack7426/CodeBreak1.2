@@ -988,7 +988,7 @@ const gameOverScreen = (score) => {
         break;
       }
     }
-    nums[s - 1] += 1;
+    nums[s - 1] = String(parseInt(nums[s - 1]) + 1);
   }
 
   //go from array to string

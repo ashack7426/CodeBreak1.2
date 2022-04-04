@@ -59,9 +59,9 @@ const strategy = () => {
 
     para = document.createElement("p");
     para.innerHTML =
-      "CODEBREAK can be a hard game for new players. This page is meant to give one possible strategy to first time players. One way to play this game is with the two-swap method. The idea with the two-swap method is that you start off by having one guess and then your next guess involves you swapping two of the letters and keeping everything else the same from the previous guess. Look below to see all the possible cases with this strategy.";
+      " CODEBREAK can be a hard game for new players. This page is meant to give one possible strategy to first time players. One way to play this game is with the two-swap method. The idea with the two-swap method is that you start off by having one guess and then your next guess involves you swapping two of the letters and keeping everything else the same from the previous guess. Look below to see all the possible cases with this strategy.";
 
-    para.style.padding = "2vw";
+    para.style.padding = "4vw";
     para.style.textAlign = "center";
     para.style.fontSize = "calc(10px + 1.5vh)";
     intro.appendChild(para);

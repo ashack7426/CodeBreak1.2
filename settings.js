@@ -48,42 +48,44 @@ const setting = () => {
       if (level === "reg") {
         localStorage.setItem("hard_crown", "false");
         //clear the current row
-        guessRows.forEach((guessRow, guessRowIndex) => {
-          guessRow.forEach((_guess, guessIndex) => {
-            if (guessRowIndex === currentRow) {
-              let rowTiles = document.querySelector(
-                "#guessRow-" + currentRow
-              ).childNodes;
+        if (localStorage.getItem("game_over") === "false") {
+          guessRows.forEach((guessRow, guessRowIndex) => {
+            guessRow.forEach((_guess, guessIndex) => {
+              if (guessRowIndex === currentRow) {
+                let rowTiles = document.querySelector(
+                  "#guessRow-" + currentRow
+                ).childNodes;
 
-              rowTiles.forEach((tile) => {
-                tile.textContent = "";
-                guessRows[guessRowIndex][guessIndex] = "";
-                //change color back to default
-                removeColor(tile);
-              });
+                rowTiles.forEach((tile) => {
+                  tile.textContent = "";
+                  guessRows[guessRowIndex][guessIndex] = "";
+                  //change color back to default
+                  removeColor(tile);
+                });
 
-              if (guessIndex === 0) {
-                markElement = document.getElementById(
-                  "markRow-" + currentRow + "-tile-" + guessIndex
-                );
+                if (guessIndex === 0) {
+                  markElement = document.getElementById(
+                    "markRow-" + currentRow + "-tile-" + guessIndex
+                  );
 
-                markElement.classList.add("cursor");
-                markElement.textContent = "*";
-              } else {
-                markElement = document.getElementById(
-                  "markRow-" + currentRow + "-tile-" + guessIndex
-                );
+                  markElement.classList.add("cursor");
+                  markElement.textContent = "*";
+                } else {
+                  markElement = document.getElementById(
+                    "markRow-" + currentRow + "-tile-" + guessIndex
+                  );
 
-                if (markElement !== null) {
-                  markElement.classList = "mark";
-                  markElement.textContent = "";
+                  if (markElement !== null) {
+                    markElement.classList = "mark";
+                    markElement.textContent = "";
+                  }
                 }
-              }
 
-              currentTile = 0;
-            }
+                currentTile = 0;
+              }
+            });
           });
-        });
+        }
 
         for (let i = 0; i < 3; i++) {
           let num = 0;
