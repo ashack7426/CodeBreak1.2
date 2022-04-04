@@ -2,7 +2,7 @@
 
 
 
-Click [here](enchanting-wisp-63b545.netlify.app) to go to the site. 
+Click [here](https://enchanting-wisp-63b545.netlify.app/) to go to the site. 
 
 
 
